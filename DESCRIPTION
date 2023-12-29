@@ -1,12 +1,13 @@
 Package: psidread
-Title: What the Package Does (One Line, Title Case)
+Title: R package to help manage, construct, and reshape PSID data files in a simplified way using existing text from the official website.
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+    person("Shuyi", "Qiu", , "shuyi.qiu@duke.edu", role = c("aut", "cre"),
+           comment = c(ORCID = "0009-0000-9730-5262"))
 Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
+URL: https://github.com/Qcrates/psidread
+BugReports: https://github.com/Qcrates/psidread/issues
