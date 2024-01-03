@@ -21,7 +21,9 @@ psid_unzip(indir, exdir, zipped = TRUE, type = "package", filename = NA)
 \code{.rda} data files stored in the specified directory file folder
 }
 \description{
-This \code{psid_unzip()} function streamlines the process of preparing ASCII data obtained from the PSID website.
+This \code{psid_unzip()} function streamlines the process of transforming ASCII data downloaded from the PSID website to R data files (.rda).
+}
+\details{
 This function executes two primary operations:
 \itemize{
 \item Unzip the zipped data files

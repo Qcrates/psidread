@@ -1,6 +1,7 @@
 #' @title Unzip and transfer the downloaded PSID data files
 #' @description
-#' This `psid_unzip()` function streamlines the process of preparing ASCII data obtained from the PSID website.
+#' This `psid_unzip()` function streamlines the process of transforming ASCII data downloaded from the PSID website to R data files (.rda).
+#' @details
 #' This function executes two primary operations:
 #' - Unzip the zipped data files
 #' - Converts the ASCII file into a `.rda` format for the reading steps

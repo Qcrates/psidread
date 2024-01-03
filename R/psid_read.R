@@ -1,7 +1,7 @@
 #' @title Read PSID data from the packaged data file or customized data file
 #' @description
-#' `psid_read()` is the core function of this package.
-#' It enables the user to read variables from multiple packaged PSID data files using just one line of code.
+#' `psid_read()` is the core function which enables the user to read variables from multiple packaged PSID data files using just one line of code.
+#' @details
 #' This function also offers the option to read a customized single data files with selected variables.
 #' It is important to note that `psid_read()` does not change the original variable names as they are in the source data.
 #' To execute it effectively, please make sure that:

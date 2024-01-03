@@ -1,7 +1,8 @@
 #' @title Rename and reshape your PSID dataset
 #' @description
-#' `psid_reshape()` serves as the final step in processing your PSID data.
-#' It helps the user rename and reshape the data frame to produce output in your desired format.
+#' `psid_reshape()` serves as the final step in processing your PSID data which helps the user rename and reshape the data frame to produce output in your desired format.
+#'
+#' @details
 #' This function offers options in data output at both the household and individual levels.
 #' When the user specifies for household-level output, the output will only retain the household head's record for each household.
 #' This option will be useful if the user aims to conduct family-level analysis.
