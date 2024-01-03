@@ -123,7 +123,7 @@ psid_str(
 
 It's easy to find the `[YY]VARCODE` text from PSID website. Any codebook includes a full list of the variables in the "Years Available" part. All you need to do is to define the variable name that you want to use in your analysis code (e.g. `num_child`).
 
-![](images/Screen Shot 2024-01-03 at 4.37.13 PM.png)
+![](images/psidvarlist-01.png)
 
 It is recommended to format the input of variable list like the above code following this syntax: `c("varname1 || [YY]VARCODE [YY]VARCODE [YY]VARCODE","varname2 || [YY]VARCODE [YY]VARCODE [YY]VARCODE")`. It is not necessary for the user to pay specific attention to the space in the text, but two mandatory requirements need to be satisfied:
 
