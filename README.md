@@ -24,4 +24,4 @@ devtools::install_github("Qcrates/psidread")
 
 Please refer to the vignettes for the detailed instructions on how to
 build your own dataset from PSID using this package: [psidread user
-manual](%22vignettes/my-vignette.html%22)
+manual](vignettes/my-vignette.html)
