@@ -54,11 +54,26 @@ What `psidread` package is created to help:
 ### Example Workflow
 
 ``` r
+# Step 1: Create the table of data structure ----
 psid_varlist = c(" hh_age || [13]ER53017 [17]ER66017", " p_age || [13]ER34204")
 str_df <- psid_str(varlist = psid_varlist, type = "separated")
-input_directory <- "/Users/RachelChiu/Documents/ReProj/PSID/psidread/inst/extdata"
-psid_df <- psid_read(indir = input_directory, str_df = str_df,idvars = c("ER30000"),type = "package",filename = NA)
-str(psid_df)
+
+# Step 2: Unzip and convert the ascii data ----
+input_directory <- "your/input/directory"
+output_directory <- "your/export/directory"
+psid_unzip(indir = input_directory,
+           exdir = output_directory,
+           zipped = TRUE,
+           type = "package",
+           filename = NA)
+
+# Step 3: Read and merge data ----
+data_directory <- "your/folder/with/converted/data"
+psid_df <- psid_read(indir = data_directory, str_df = str_df,idvars = c("ER30000"),type = "package",filename = NA)
+
+# Step 4: Rename and reshape the data ----
+df <- psid_reshape(psid_df = psid_df, str_df = str_df, shape = "long", level = "individual")
+df
 ```
 
 Please refer to the vignettes for the detailed instructions on how to
