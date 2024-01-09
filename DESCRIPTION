@@ -1,10 +1,10 @@
 Package: psidread
-Title: Streamline Building Panel Data from PSID Raw Files
+Title: Streamline Building Panel Data from Panel Study of Income Dynamics ('PSID') Raw Files
 Version: 0.0.0.9000
 Authors@R: 
     person("Shuyi", "Qiu", , "shuyi.qiu@duke.edu", role = c("aut", "cre"),
            comment = c(ORCID = "0009-0000-9730-5262"))
-Description: Streamline the management, creation, and formatting of panel data from the Panel Study of Income Dynamics (PSID) using this user-friendly tool. Simply define variable names and input codebook details directly from the PSID official website, and this toolbox will efficiently facilitate the data preparation process, transforming raw PSID files into a well-organized format ready for further analysis.
+Description: Streamline the management, creation, and formatting of panel data from the Panel Study of Income Dynamics ('PSID') using this user-friendly tool. Simply define variable names and input code book details directly from the 'PSID' official website, and this toolbox will efficiently facilitate the data preparation process, transforming raw 'PSID' files into a well-organized format ready for further analysis.
 License: GPL (>= 3) + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -21,6 +21,8 @@ Suggests:
     knitr,
     rmarkdown,
     testthat (>= 3.0.0),
-    DiagrammeR
+    DiagrammeR,
+    spelling
 Config/testthat/edition: 3
 VignetteBuilder: knitr
+Language: en-US

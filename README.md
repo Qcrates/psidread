@@ -77,6 +77,4 @@ df
 ```
 
 Please refer to the vignettes for the detailed instructions on how to
-build your own dataset from PSID using this package: [psidread user
-manual](vignettes/my-vignette.html) (GitHub does not show the html file
-directly. Download and open the file in the web browser.)
+build your own dataset from PSID using this package.
