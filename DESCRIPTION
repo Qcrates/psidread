@@ -5,7 +5,7 @@ Authors@R:
     person("Shuyi", "Qiu", , "shuyi.qiu@duke.edu", role = c("aut", "cre"),
            comment = c(ORCID = "0009-0000-9730-5262"))
 Description: Streamline the management, creation, and formatting of panel data from the Panel Study of Income Dynamics ('PSID') using this user-friendly tool. Simply define variable names and input code book details directly from the 'PSID' official website, and this toolbox will efficiently facilitate the data preparation process, transforming raw 'PSID' files into a well-organized format ready for further analysis.
-License: GPL (>= 3) + file LICENSE
+License: GPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
