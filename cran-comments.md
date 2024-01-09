@@ -1,6 +1,13 @@
 ## Resubmission
 This is a resubmission. In this version I have:
 
+* Omitted the LICENSE file
+* Update the version to 1.0.0
+
+
+## Resubmission
+This is a resubmission. In this version I have:
+
 * Wrapped the word 'psid' and separately wrote 'code book'
 
 ## Resubmission
