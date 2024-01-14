@@ -57,7 +57,7 @@ psid_unzip <- function(indir, exdir, zipped = TRUE, type = "package", filename =
         utils::unzip(zipfile = file.path(indir, list_tozip[i]), exdir = file.path(indir, list_foldername[i]), overwrite = TRUE)
 
         # Text reminder
-        print(paste("File ", list_tozip[i], " has been unzipped!", sep = ""))
+        message("File ", list_tozip[i], " has been unzipped!")
 
       }
 
@@ -89,7 +89,7 @@ psid_unzip <- function(indir, exdir, zipped = TRUE, type = "package", filename =
       save(list = list_unzipped[i], file = paste(paste(exdir, list_unzipped[i], sep = "/"), ".rda", sep = ""))
 
       # Text reminder
-      print(paste("Data file ", list_unzipped[i], ".rda has been created successfully!", sep = ""))
+      message("Data file ", list_unzipped[i], ".rda has been created successfully!")
 
       # Clean the environment
       rm(temp, list = list_unzipped[i])
@@ -118,7 +118,7 @@ psid_unzip <- function(indir, exdir, zipped = TRUE, type = "package", filename =
 
           # Unzip and print reminder
           utils::unzip(zipfile = file.path(indir, filename), exdir = file.path(indir, sub("\\.zip$","",filename)), overwrite = TRUE)
-          print(paste("File ", filename, " has been unzipped!", sep = ""))
+          message("File ", filename, " has been unzipped!")
 
           # Remove the file extension
           filename <- sub("\\.zip$","",filename)
@@ -138,7 +138,7 @@ psid_unzip <- function(indir, exdir, zipped = TRUE, type = "package", filename =
                                use_clean_names = FALSE)
       assign(filename,temp)
       save(list = filename, file = paste(paste(exdir, filename, sep = "/"), ".rda", sep = ""))
-      print(paste("Data file ", filename, ".rda has been created successfully!", sep = ""))
+      message("Data file ", filename, ".rda has been created successfully!")
       rm(temp, list = filename)
 
     }

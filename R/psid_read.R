@@ -195,7 +195,7 @@ psid_read <- function(indir, str_df, idvars = NA, type, filename = NA){
 
         # Clean the environment and print reminder
         rm(list = setdiff(ls(envir = temp_env), "key_tb"), envir = temp_env)
-        print(paste("Data for year ",yr," has been added!",sep=""))
+        message("Data for year ",yr," has been added!")
 
       } else {
 

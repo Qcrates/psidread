@@ -1,6 +1,12 @@
 ## Resubmission
 This is a resubmission. In this version I have:
 
+* Changed print() to message() in psid_unzip() and psid_read() as suggested
+* Added the link to PSID website in the DESCRIPTION file
+
+## Resubmission
+This is a resubmission. In this version I have:
+
 * Omitted the LICENSE file
 * Update the version to 1.0.0
 
