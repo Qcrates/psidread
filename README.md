@@ -12,7 +12,14 @@ the Panel Study of Income Dynamics (PSID).
 
 ## Installation
 
-You can install the development version of psidread from
+Jan 16th Update: This package is now available on CRAN! You can install
+it directly from CRAN with:
+
+``` r
+install.packages("psidread")
+```
+
+Or, you can install the development version of psidread from
 [GitHub](https://github.com/) with:
 
 ``` r
@@ -76,5 +83,7 @@ df <- psid_reshape(psid_df = psid_df, str_df = str_df, shape = "long", level = "
 df
 ```
 
-Please refer to the vignettes for the detailed instructions on how to
-build your own dataset from PSID using this package.
+Please refer to the
+[vignettes](https://cran.r-project.org/web/packages/psidread/vignettes/my-vignette.html)
+for the detailed instructions on how to build your own dataset from PSID
+using this package.

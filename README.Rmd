@@ -23,7 +23,13 @@ The goal of psidread is to provide a user-friendly approach to streamline the ma
 
 ## Installation
 
-You can install the development version of psidread from [GitHub](https://github.com/) with:
+Jan 16th Update: This package is now available on CRAN! You can install it directly from CRAN with:
+
+``` {.r .R}
+install.packages("psidread")
+```
+
+Or, you can install the development version of psidread from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
@@ -75,4 +81,4 @@ df <- psid_reshape(psid_df = psid_df, str_df = str_df, shape = "long", level = "
 df
 ```
 
-Please refer to the vignettes for the detailed instructions on how to build your own dataset from PSID using this package.
+Please refer to the [vignettes](https://cran.r-project.org/web/packages/psidread/vignettes/my-vignette.html) for the detailed instructions on how to build your own dataset from PSID using this package.
