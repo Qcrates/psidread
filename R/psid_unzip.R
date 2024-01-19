@@ -29,11 +29,11 @@
 #'
 #' @examples
 #' # Example 1: Unzip and convert packaged files
-#' exdir <- system.file(package = "psidread","extdata") # Define the export directory
+#' exdir <- tempdir()
 #' indir <- system.file(package = "psidread","extdata") # Define the input directory
 #' psid_unzip(indir = indir, exdir = exdir, zipped = TRUE, type = "package", filename = NA)
 #' # Example 2: Unzip and convert customized single data files
-#' exdir <- system.file(package = "psidread","extdata") # Define the input directory
+#' exdir <- tempdir()
 #' indir <- system.file(package = "psidread","extdata") # Define the output directory
 #' filename = "J327825.zip"
 #' psid_unzip(indir = indir, exdir = exdir, zipped = TRUE, type = "single", filename = filename)
@@ -78,8 +78,8 @@ psid_unzip <- function(indir, exdir, zipped = TRUE, type = "package", filename =
     for (i in c(1:length(list_unzipped))){
 
       # Read and convert the ASCII files into .rda files
-      temp <- read_ascii_setup(data = file.path(exdir, list_unzipped[i], paste0(list_unzipped_upper[i],".txt")),
-                               setup_file = file.path(exdir, list_unzipped[i], paste0(list_unzipped_upper[i],".sas")),
+      temp <- read_ascii_setup(data = file.path(indir, list_unzipped[i], paste0(list_unzipped_upper[i],".txt")),
+                               setup_file = file.path(indir, list_unzipped[i], paste0(list_unzipped_upper[i],".sas")),
                                use_clean_names = FALSE)
 
       # Rename the dataset
@@ -133,8 +133,8 @@ psid_unzip <- function(indir, exdir, zipped = TRUE, type = "package", filename =
       filename_upper <- toupper(filename)
 
       ## Step 2. Read the ASCII and convert ----
-      temp <- read_ascii_setup(data = file.path(exdir, filename, paste0(filename_upper, ".txt")),
-                               setup_file = file.path(exdir, filename, paste0(filename_upper, ".sas")),
+      temp <- read_ascii_setup(data = file.path(indir, filename, paste0(filename_upper, ".txt")),
+                               setup_file = file.path(indir, filename, paste0(filename_upper, ".sas")),
                                use_clean_names = FALSE)
       assign(filename,temp)
       save(list = filename, file = paste(paste(exdir, filename, sep = "/"), ".rda", sep = ""))

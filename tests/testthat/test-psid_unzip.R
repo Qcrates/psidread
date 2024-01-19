@@ -1,5 +1,5 @@
 test_that("psid_unzip() helps unzip and convert the data to .rda files", {
-  exdir <- system.file(package = "psidread","extdata") # Define the input directory
+  exdir <- tempdir()
   indir <- system.file(package = "psidread","extdata") # Define the output directory
 
   # Package version

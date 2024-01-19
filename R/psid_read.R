@@ -33,13 +33,7 @@
 #' str_df <- psid_str(varlist = psid_varlist,
 #'                    type = "separated")
 #' # Below is the file path for the package test data, set this to your own directory
-#' exdir <- system.file(package = "psidread","extdata")
 #' indir <- system.file(package = "psidread","extdata")
-#' psid_unzip(indir = indir,
-#'            exdir = exdir,
-#'            zipped = TRUE,
-#'            type = "package",
-#'            filename = NA)
 #' psid_read(indir = indir,
 #'           str_df = str_df,
 #'           idvars = c("ER30000"),
@@ -48,11 +42,6 @@
 #'
 #' # Example 2: Read from your customized data file (Whole procedure)
 #' filename = "J327825.zip"
-#' psid_unzip(indir = indir,
-#'            exdir = exdir,
-#'            zipped = TRUE,
-#'            type = "single",
-#'            filename = filename)
 #' psid_read(indir = indir,
 #'           str_df = str_df,
 #'           idvars = c("ER30000"),
