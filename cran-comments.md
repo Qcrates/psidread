@@ -1,5 +1,9 @@
 ## Resubmission
 This is a resubmission. In this version I have:
+* Revised the URL of the vignettes
+
+## Resubmission
+This is a resubmission. In this version I have:
 * Revised the output directory to tempdir()
 * Corrected the pathway error in psid_unzip()
 

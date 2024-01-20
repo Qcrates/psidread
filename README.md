@@ -84,6 +84,6 @@ df
 ```
 
 Please refer to the
-[vignettes](https://cran.r-project.org/web/packages/psidread/vignettes/my-vignette.html)
+[vignettes](https://cran.r-project.org/package=psidread/vignettes/my-vignette.html)
 for the detailed instructions on how to build your own dataset from PSID
 using this package.
