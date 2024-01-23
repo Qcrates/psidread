@@ -37,17 +37,17 @@ library(psidread)
 
 **Data Downloading Approach**: PSID's website offers two primary method to download the data: 1. [packaged files](https://simba.isr.umich.edu/Zips/ZipMain.aspx) and 2. [customized shopping cart](https://simba.isr.umich.edu/default.aspx) with only selected variables. These two methods have both pros and cons:
 
-+------+---------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
-|      | Packaged Files                                                                                                      | Customized File                                                                                              |
-+======+=====================================================================================================================+==============================================================================================================+
-| Pros | 1.  Reusable                                                                                                        | 1.  Take less space                                                                                          |
-|      | 2.  Avoid redundant downloading                                                                                     | 2.  Options available for downloading data in the format that can be processed directly using R              |
-|      | 3.  Easy to manage if you have multiple projects using PSID                                                         | 3.  Waves already merged by PSID                                                                             |
-+------+---------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
-| Cons | 1.  Hard to merge manually                                                                                          | 1.  The download procedure needs to be repeated if additional variables are added in the analysis            |
-|      | 2.  Present in ASCII format and require additional software like SAS or Stata to process before being imported to R | 2.  The same variables are downloaded repeatedly if the user have multiple research projects using PSID data |
-|      | 3.  Even with paid software, packaged files still need to be unzipped and converted one by one before analysis      |                                                                                                              |
-+------+---------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
++------------+---------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
+|            | Packaged Files                                                                                                      | Customized File                                                                                              |
++============+=====================================================================================================================+==============================================================================================================+
+| Pros       | 1.  Reusable                                                                                                        | 1.  Take less space                                                                                          |
+|            | 2.  Avoid redundant downloading                                                                                     | 2.  Options available for downloading data in the format that can be processed directly using R              |
+|            | 3.  Easy to manage if you have multiple projects using PSID                                                         | 3.  Waves already merged by PSID                                                                             |
++------------+---------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
+| Cons       | 1.  Hard to merge manually                                                                                          | 1.  The download procedure needs to be repeated if additional variables are added in the analysis            |
+|            | 2.  Present in ASCII format and require additional software like SAS or Stata to process before being imported to R | 2.  The same variables are downloaded repeatedly if the user have multiple research projects using PSID data |
+|            | 3.  Even with paid software, packaged files still need to be unzipped and converted one by one before analysis      |                                                                                                              |
++------------+---------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
 
 **Variable Name**: A significant challenge when analyzing PSID data is its variable name which is not so intuitive or interpretable (e.g. `ER00000`, `V000`). It can be a heavy workload for researchers working with multiple waves of data to rename these variables manually.
 
@@ -159,7 +159,9 @@ This function helps to unzip the data files downloaded from PSID website and con
 
 Please put your packaged files in `.zip` format in one directory. Here I set the input and output directory to be the same. You can set the `exdir` to other directory so that the output `.rda` files will be exported there separately from the directory you put the original downloaded data files.
 
-```{r}
+Please note that in the below example we use `system.file...` and `tempdir()` just because we would like to use the data file in the package file folder. In practice, it should be your directory pathway in the format like `"your/directory/pathway/psid/file/folder"`
+
+```{r, eval = F}
 input_directory <- system.file(package = "psidread","extdata")
 output_directory <- tempdir()
 psid_unzip(indir = input_directory,
@@ -171,7 +173,7 @@ psid_unzip(indir = input_directory,
 
 If you have already unzipped **ALL** the `.zip` data files. You can also skip the procedure by setting the `zipped` argument to be `FALSE`:
 
-```{r}
+```{r, eval = F}
 psid_unzip(indir = input_directory,
            exdir = output_directory,
            zipped = FALSE,
@@ -190,7 +192,7 @@ If you download the dataset from your shopping cart with selected variables, you
 
 For example:
 
-```{r}
+```{r, eval = F}
 psid_unzip(indir = input_directory,
            exdir = output_directory,
            zipped = TRUE,
