@@ -1,6 +1,6 @@
 Package: psidread
 Title: Streamline Building Panel Data from Panel Study of Income Dynamics ('PSID') Raw Files
-Version: 1.0.1
+Version: 1.0.2
 Authors@R: 
     person("Shuyi", "Qiu", , "shuyi.qiu@duke.edu", role = c("aut", "cre"),
            comment = c(ORCID = "0009-0000-9730-5262"))
