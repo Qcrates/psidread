@@ -1,5 +1,10 @@
 ## Resubmission
-This is a resubmission. In this version I have:
+This is a resubmission (1.0.2). In this version I have:
+* Revised the directory pathway problem in reshape function
+* Revised the test and example of reshape function
+
+## Resubmission
+This is a resubmission (1.0.1). In this version I have:
 * Revised the URL of the vignettes
 
 ## Resubmission
