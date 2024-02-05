@@ -41,7 +41,8 @@ If you have already executed this function before and have all the \code{.rda} f
 This function may take several minutes if you have multiple packaged file to unzip and convert.
 }
 \examples{
-# Example 1: Unzip and convert packaged files
+\dontrun{
+#' # Example 1: Unzip and convert packaged files
 exdir <- tempdir()
 indir <- system.file(package = "psidread","extdata") # Define the input directory
 psid_unzip(indir = indir, exdir = exdir, zipped = TRUE, type = "package", filename = NA)
@@ -50,4 +51,5 @@ exdir <- tempdir()
 indir <- system.file(package = "psidread","extdata") # Define the output directory
 filename = "J327825.zip"
 psid_unzip(indir = indir, exdir = exdir, zipped = TRUE, type = "single", filename = filename)
+}
 }

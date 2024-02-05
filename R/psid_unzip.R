@@ -28,7 +28,8 @@
 #' @export
 #'
 #' @examples
-#' # Example 1: Unzip and convert packaged files
+#' \dontrun{
+#' #' # Example 1: Unzip and convert packaged files
 #' exdir <- tempdir()
 #' indir <- system.file(package = "psidread","extdata") # Define the input directory
 #' psid_unzip(indir = indir, exdir = exdir, zipped = TRUE, type = "package", filename = NA)
@@ -37,6 +38,8 @@
 #' indir <- system.file(package = "psidread","extdata") # Define the output directory
 #' filename = "J327825.zip"
 #' psid_unzip(indir = indir, exdir = exdir, zipped = TRUE, type = "single", filename = filename)
+#' }
+
 
 psid_unzip <- function(indir, exdir, zipped = TRUE, type = "package", filename = NA){
   # Packaged data ----
