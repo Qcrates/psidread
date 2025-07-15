@@ -1,4 +1,8 @@
 ## Resubmission
+This is a resubmission (1.0.4). In this version I have:
+* Updated the merge key for wave 2023
+
+## Resubmission
 This is a resubmission (1.0.3). In this version I have:
 * Revised the example and test for psid_unzip()
 

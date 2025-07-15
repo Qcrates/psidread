@@ -1,6 +1,6 @@
 Package: psidread
 Title: Streamline Building Panel Data from Panel Study of Income Dynamics ('PSID') Raw Files
-Version: 1.0.3
+Version: 1.0.4
 Authors@R: 
     person("Shuyi", "Qiu", , "shuyi.qiu@duke.edu", role = c("aut", "cre"),
            comment = c(ORCID = "0009-0000-9730-5262"))
@@ -8,7 +8,7 @@ Description: Streamline the management, creation, and formatting of panel data f
 License: GPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 URL: https://github.com/Qcrates/psidread
 BugReports: https://github.com/Qcrates/psidread/issues
 Imports: 
