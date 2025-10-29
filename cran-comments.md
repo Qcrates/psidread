@@ -1,6 +1,8 @@
 ## Resubmission
 This is a resubmission (1.0.6). In this version I have:
 * Fixed the regular expressions to extract variable names in earlier waves
+* “unable to verify current time” originates from checking future file timestamps.
+  This is due to local clock verification and not related to package content.
 
 ## Resubmission
 This is a resubmission (1.0.5). In this version I have:
