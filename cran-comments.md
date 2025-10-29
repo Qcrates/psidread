@@ -1,4 +1,12 @@
 ## Resubmission
+This is a resubmission (1.0.6). In this version I have:
+* Fixed the regular expressions to extract variable names in earlier waves
+
+## Resubmission
+This is a resubmission (1.0.5). In this version I have:
+* Added dependency claim for R version
+
+## Resubmission
 This is a resubmission (1.0.4). In this version I have:
 * Updated the merge key for wave 2023
 

@@ -57,14 +57,14 @@ psid_str <- function(varlist, type = "separated"){
     # Extract self-defined variable name
     varname_list <- unlist(stringr::str_extract_all(string = input_str, pattern = "^[^| ]+"))
     # Extract [X]XX
-    varcode_list <- stringr::str_extract_all(string = input_str, pattern = "\\[[0-9]+\\] *[A-Za-z0-9]+")
+    varcode_list <- stringr::str_extract_all(string = input_str, pattern = "\\[[0-9]+\\] *[A-Za-z0-9_]+")
   } else if (type == "integrated"){
     input_str <- unlist(strsplit(varlist, split = "\\|\\|", perl = TRUE))
     input_str <- input_str[nzchar(trimws(input_str))]
     # Extract self-defined variable name
     varname_list <- sapply(stringr::str_match_all(string = input_str, pattern = "^\\s*(\\w+)"), function(x) x[,2])
     # Extract [X]XX
-    varcode_list <- stringr::str_extract_all(string = input_str, pattern = "\\[[0-9]+\\] *[A-Za-z0-9]+")
+    varcode_list <- stringr::str_extract_all(string = input_str, pattern = "\\[[0-9]+\\] *[A-Za-z0-9_]+")
   } else {
     stop("Error: Please enter either 'separated' or 'integrated' for type argument")
   }
@@ -73,7 +73,7 @@ psid_str <- function(varlist, type = "separated"){
   # Loop over all variables
   for (i in c(1:length(varcode_list))){
     # Decompose [X]XX
-    extracted <- stringr::str_match_all(string = varcode_list[[i]], pattern = "\\[([0-9]+)\\] *([0-9A-Za-z]+)")
+    extracted <- stringr::str_match_all(string = varcode_list[[i]], pattern = "\\[([0-9]+)\\] *([0-9A-Za-z_]+)")
     # Extract year
     year_temp <- as.numeric(sapply(extracted, function(x) x[,2]) )
     year_temp <- ifelse(year_temp > 50, 1900 + year_temp, 2000 + year_temp)
