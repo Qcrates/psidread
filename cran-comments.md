@@ -1,3 +1,8 @@
+
+## Resubmission
+This is a resubmission (1.0.6). In this version I have:
+* Fixed the bug in earlier versions to extract variables in the 1968 waves
+
 ## Resubmission
 This is a resubmission (1.0.6). In this version I have:
 * Fixed the regular expressions to extract variable names in earlier waves

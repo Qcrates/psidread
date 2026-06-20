@@ -85,8 +85,12 @@ psid_reshape <- function(psid_df, str_df, shape = "wide", level = "individual"){
     list_varcode <- unname(unlist(str_df[i,c(2:ncol(str_df))]))
     list_varname <- paste(varnames_woyear[!is.na(list_varcode)], yr, sep = "_")
     list_varcode <- list_varcode[!is.na(list_varcode)]
+    # Only rename columns that actually exist in psid_df
+    exists_mask <- list_varcode %in% colnames(psid_df)
+    list_varcode <- list_varcode[exists_mask]
+    list_varname <- list_varname[exists_mask]
     psid_df <- psid_df |>
-      dplyr::rename(setNames(list_varcode,list_varname))
+      dplyr::rename(setNames(list_varcode, list_varname))
   }
 
   # Step 2: Reshape ----
@@ -114,7 +118,7 @@ psid_reshape <- function(psid_df, str_df, shape = "wide", level = "individual"){
         names_sep = "_(?=[^_]+$)" # match the last underscore in the variable name
       )
     if (shape == "long"){
-    ## Household long ----
+      ## Household long ----
       df <- df |>
         dplyr::filter(rel2hh == 10 & xsqnr == 1)
     } else if (shape == "wide"){
@@ -137,6 +141,7 @@ psid_reshape <- function(psid_df, str_df, shape = "wide", level = "individual"){
   }
   return(df)
 }
+
 
 
 

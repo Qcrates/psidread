@@ -93,8 +93,13 @@ psid_read <- function(indir, str_df, idvars = NA, type, filename = NA){
     # Including: ER30001, ER30002, fid, xsqnr, rel2hh, idvars
     psid_df <- temp_env$ind_df |>
       dplyr::select(all_of(na.omit(c("ER30001","ER30002", temp_env$key_tb$indfid, temp_env$key_tb$xsqnr, temp_env$key_tb$rel2hh, idvars)))) |>
-      dplyr::mutate(pid = ER30001 * 1000 + ER30002) |>
-      dplyr::select(-ER30001,-ER30002)
+      dplyr::mutate(pid = ER30001 * 1000 + ER30002)
+
+    if (1968 %in% year_toread) {
+      psid_df <- psid_df |> dplyr::mutate(indfid_1968 = ER30001)
+    }
+
+    psid_df <- psid_df |> dplyr::select(-dplyr::any_of(c("ER30001", "ER30002")))
 
     # Remove those has read in the first step
     varlist_toread <- setdiff(varlist_toread, colnames(psid_df))
@@ -119,6 +124,7 @@ psid_read <- function(indir, str_df, idvars = NA, type, filename = NA){
       # Get the vector of fid variables: Unlist and unname
       famfid_yr <- unname(unlist(temp_env$key_tb |> dplyr::filter(year == yr) |> dplyr::select(famfid)))
       indfid_yr <- unname(unlist(temp_env$key_tb |> dplyr::filter(year == yr) |> dplyr::select(indfid)))
+      if (indfid_yr == "ER30001") indfid_yr <- "indfid_1968"
       wlthid_yr <- unname(unlist(temp_env$key_tb |> dplyr::filter(year == yr) |> dplyr::select(wlthid)))
 
       # Varlist to read for this year
@@ -195,12 +201,15 @@ psid_read <- function(indir, str_df, idvars = NA, type, filename = NA){
 
     }
 
+    # Drop ER30001/ER30002 now that all year joins are complete
+    psid_df <- psid_df |> dplyr::select(-dplyr::any_of(c("ER30001", "ER30002")))
+
     # Step4: Remove those non-response for all waves covered
-    rowSums(psid_df[,temp_env$key_tb$indfid])
-    psid_df <- psid_df[which(rowSums(psid_df[,temp_env$key_tb$indfid]) > 0),]
+    indfid_present <- intersect(temp_env$key_tb$indfid, colnames(psid_df))
+    psid_df <- psid_df[which(rowSums(psid_df[, indfid_present, drop = FALSE]) > 0), ]
 
   } else if (type == "single"){
-  # Single ----
+    # Single ----
     varlist_final <- union(varlist_toread, unname(unlist(temp_env$key_tb[,c("xsqnr","rel2hh","indfid")])))
     load(file = paste(indir,paste(sub("\\.zip$","",filename),".rda",sep=""), sep="/"), envir = temp_env)
     psid_df <- get(sub("\\.zip$","",filename), envir = temp_env) |>
